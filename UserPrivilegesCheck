@@ -1,0 +1,38 @@
+package oops;
+class User {
+    String name;
+    User(String name) {
+        this.name = name;
+    }
+    boolean hasAdminPrivileges() {
+        return false;
+    }
+class Admin extends User {
+
+    Admin(String name) {
+        super(name);
+    }
+    boolean hasAdminPrivileges() {
+        return true;
+    }
+}
+class Guest extends User {
+
+    Guest(String name) {
+        super(name);
+    }
+
+    boolean hasAdminPrivileges() {
+        return false;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        User u1 = new Admin(""Mithra"");   
+        User u2 = new Guest("Mathu");  
+
+        System.out.println(u1.name + " Admin? " + u1.hasAdminPrivileges());
+        System.out.println(u2.name + " Admin? " + u2.hasAdminPrivileges());
+    }
+}
+}
